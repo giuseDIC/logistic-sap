@@ -87,7 +87,7 @@
       "properties" : {
         "code" : {
           "type" : "string",
-          "enum" : [ "CARRIER_ID_REQUIRED", "CARRIER_NOT_FOUND", "INTERNAL_ERROR" ]
+          "enum" : [ "CARRIER_ID_REQUIRED", "CARRIER_NOT_FOUND", "INTERNAL_ERROR", "DELIVERY_DATA_REQUIRED", "ORDER_NOT_FOUND", "INVALID_ORDER_STATUS" ]
         },
         "message" : {
           "type" : "string"

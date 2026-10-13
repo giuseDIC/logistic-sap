@@ -140,7 +140,7 @@
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <sap:ConvertExternalCodeRequest>\r
-         <sap:externalCode>EXT-998877</sap:externalCode>\r
+         <sap:externalCode>EXT-000</sap:externalCode>\r
       </sap:ConvertExternalCodeRequest>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="ConvertExternalCode"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="929e3efa-f07e-4d39-ad96-2188b156c211" isOneWay="false" action="GetDocumentDetails" name="GetDocumentDetails" bindingOperationName="GetDocumentDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1bc5a80c-cc1f-448c-af0e-e0ac5e9dde19" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/SOAPServiceBinding/sapDocumentService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sap="http://www.keypartner.com/logistic-sap/SapDocuments">\r
