@@ -4,8 +4,14 @@
         "items": [],
         "url": "https://integration.cloud.tibco.com:443"
     }],
-    "resources": [{
-        "location": "Service Descriptors/logistcore.Main_Document-Main_Document.json",
-        "type": "generated"
-    }]
+    "resources": [
+        {
+            "location": "Service Descriptors/logistcore.Main_Document-Main_Document.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/logistcore.Main_Delivery-Main_Delivery.json",
+            "type": "generated"
+        }
+    ]
 }

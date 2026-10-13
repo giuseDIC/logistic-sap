@@ -20,6 +20,9 @@
             <xs:enumeration value="CARRIER_ID_REQUIRED"/>
             <xs:enumeration value="CARRIER_NOT_FOUND"/>
             <xs:enumeration value="INTERNAL_ERROR"/>
+            <xs:enumeration value="DELIVERY_DATA_REQUIRED"/>
+			<xs:enumeration value="ORDER_NOT_FOUND"/>
+			<xs:enumeration value="INVALID_ORDER_STATUS"/>
         </xs:restriction>
     </xs:simpleType>
 

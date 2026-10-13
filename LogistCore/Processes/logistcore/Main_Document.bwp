@@ -20,8 +20,8 @@
     <tibex:VariableDescriptor type="MemorySaving">
         <task name="flow1">
             <endingVariables>
-                <variable>CallGetDocuments</variable>
                 <variable>get</variable>
+                <variable>CallGetDocuments</variable>
             </endingVariables>
         </task>
         <task name="getOut">
@@ -2194,7 +2194,7 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/Main_Document/parameters&quot; xmlns:tns2=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;get&quot;/>&#xa;    &lt;xsl:template name=&quot;CallProcess-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:GetDocumentDetailsRequest>&#xa;            &lt;tns2:carrierId>&#xa;                &lt;xsl:value-of select=&quot;$get/parameters/tns1:documentsGetParameters/tns1:carrierId&quot;/>&#xa;            &lt;/tns2:carrierId>&#xa;        &lt;/tns2:GetDocumentDetailsRequest>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/Main_Document/parameters&quot; xmlns:tns2=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;get&quot;/>&#xa;    &lt;xsl:template name=&quot;CallProcess-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:GetDocumentDetailsRequest>&#xa;            &lt;xsl:if test=&quot;$get/parameters/tns1:documentsGetParameters/tns1:carrierId&quot;>&#xa;                &lt;tns2:carrierId>&#xa;                    &lt;xsl:value-of select=&quot;$get/parameters/tns1:documentsGetParameters/tns1:carrierId&quot;/>&#xa;                &lt;/tns2:carrierId>&#xa;            &lt;/xsl:if>&#xa;        &lt;/tns2:GetDocumentDetailsRequest>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="CallGetDocuments-input"
                                     name="CallGetDocuments"
@@ -2222,16 +2222,14 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding coercion=""
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/Main_Document/parameters&quot; xmlns:tns2=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;get.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;CallProcess-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:GetDocumentDetailsRequest>&#xa;            &lt;tns2:carrierId>&#xa;                &lt;xsl:value-of select=&quot;$get.parameters/tns1:carrierId&quot;/>&#xa;            &lt;/tns2:carrierId>&#xa;        &lt;/tns2:GetDocumentDetailsRequest>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/Main_Document/parameters&quot; xmlns:tns2=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;get.parameters&quot;/>&lt;xsl:template name=&quot;CallProcess-input&quot; match=&quot;/&quot;>&lt;tns2:GetDocumentDetailsRequest>&lt;xsl:if test=&quot;$get.parameters/tns1:carrierId&quot;>&lt;tns2:carrierId>&lt;xsl:value-of select=&quot;$get.parameters/tns1:carrierId&quot;/>&lt;/tns2:carrierId>&lt;/xsl:if>&lt;/tns2:GetDocumentDetailsRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
                                     subProcessName="logistcore.SapGetDocumentDetails" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:scope name="ForEachDocument"
-                                tibex:group="iterate"
-                                tibex:indexOriginalName="index"
-                                tibex:indexToGlobal="true" tibex:xpdlId="09cca0ed-3acd-4872-bcca-c68846b60296">
+                                tibex:group="iterate" tibex:xpdlId="09cca0ed-3acd-4872-bcca-c68846b60296">
                                 <bpws:targets>
                                     <bpws:target linkName="CallGetDocumentsToIterate"/>
                                 </bpws:targets>

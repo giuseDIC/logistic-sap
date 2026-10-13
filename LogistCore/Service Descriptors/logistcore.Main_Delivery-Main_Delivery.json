@@ -1,0 +1,108 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Main_Delivery",
+    "description" : "Main_Delivery service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/deliveries" : {
+      "post" : {
+        "summary" : "postMain_Delivery",
+        "description" : "postMain_Delivery",
+        "operationId" : "post-deliveries",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/DeliveryRequest"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a DeliveryResponse to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/DeliveryResponse"
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "409" : {
+            "description" : "Conflict",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "202" : {
+            "description" : "Accepted",
+            "schema" : {
+              "$ref" : "#/definitions/DeliveryResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "DeliveryRequest" : {
+      "type" : "object",
+      "properties" : {
+        "externalOrderCode" : {
+          "type" : "string"
+        },
+        "deliveryDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "notes" : {
+          "type" : "string"
+        }
+      }
+    },
+    "DeliveryResponse" : {
+      "type" : "object",
+      "required" : [ "message" ],
+      "properties" : {
+        "message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ErrorResponse" : {
+      "type" : "object",
+      "required" : [ "code", "message" ],
+      "properties" : {
+        "code" : {
+          "type" : "string",
+          "enum" : [ "CARRIER_ID_REQUIRED", "CARRIER_NOT_FOUND", "INTERNAL_ERROR", "DELIVERY_DATA_REQUIRED", "ORDER_NOT_FOUND", "INVALID_ORDER_STATUS" ]
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

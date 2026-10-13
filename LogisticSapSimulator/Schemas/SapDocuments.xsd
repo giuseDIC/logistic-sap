@@ -3,19 +3,15 @@
       
   <!-- GetDocumentDetailsRequest  -->
       
-  <xs:element name="GetDocumentDetailsRequest">
-            
+<xs:element name="GetDocumentDetailsRequest">
     <xs:complexType>
-                  
-      <xs:sequence>
-                        
-        <xs:element name="carrierId" type="xs:string"/>
-                    
-      </xs:sequence>
-              
+        <xs:sequence>
+            <xs:element name="carrierId" type="xs:string" minOccurs="0"/>
+            <xs:element name="documentId" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
     </xs:complexType>
-        
-  </xs:element>
+</xs:element>
+
       
   <!-- GetDocumentDetailsResponse  -->
       

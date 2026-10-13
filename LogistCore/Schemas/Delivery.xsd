@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.keypartner.com/logistic-sap/Delivery"
+    xmlns:tns="http://www.keypartner.com/logistic-sap/Delivery"
+    elementFormDefault="qualified">
+
+    <!-- Body di POST /deliveries: tutto facoltativo, i controlli li fa il processo (400 nostro, non quello di BW) -->
+    <xs:element name="DeliveryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="externalOrderCode" type="xs:string" minOccurs="0"/>
+                <xs:element name="deliveryDate" type="xs:dateTime" minOccurs="0"/>
+                <xs:element name="notes" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Risposta 202 -->
+    <xs:element name="DeliveryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

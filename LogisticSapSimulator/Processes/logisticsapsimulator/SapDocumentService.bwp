@@ -227,6 +227,8 @@
                     <sequence>
                         <element maxOccurs="1" minOccurs="1"
                             name="carrierId" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="documentId" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -1673,6 +1675,8 @@
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+404cf540-9532-44a2-ae2f-513cf82d47bc+input" prefix="tns3"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+fe003601-7874-412f-8e6b-73ea3772fc31+input" prefix="tns4"/>
+        <tibex:namespaceItem
+            namespace="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://schemas.xmlsoap.org/wsdl/" namespace="http://www.keypartner.com/logistic-sap/SapDocumentService"/>
     <bpws:partnerLinks>
@@ -1769,7 +1773,7 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:activityExtension
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e56111d1-632a-449a-b148-971d5fea99bd+input&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetDocumentDetails1&quot;/>&lt;xsl:template name=&quot;QueryDocuments-input&quot; match=&quot;/&quot;>&lt;tns:jdbcQueryActivityInput>&lt;carrierId>&lt;xsl:value-of select=&quot;$GetDocumentDetails1/parameters/tns1:GetDocumentDetailsRequest/tns1:carrierId&quot;/>&lt;/carrierId>&lt;/tns:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e56111d1-632a-449a-b148-971d5fea99bd+input&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetDocumentDetails1&quot;/>&lt;xsl:template name=&quot;QueryDocuments-input&quot; match=&quot;/&quot;>&lt;tns:jdbcQueryActivityInput>&lt;carrierId>&lt;xsl:value-of select=&quot;string($GetDocumentDetails1/parameters/tns1:GetDocumentDetailsRequest/tns1:carrierId)&quot;/>&lt;/carrierId>&lt;documentId>&lt;xsl:value-of select=&quot;string($GetDocumentDetails1/parameters/tns1:GetDocumentDetailsRequest/tns1:documentId)&quot;/>&lt;/documentId>&lt;/tns:jdbcQueryActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="QueryDocuments-input"
                                     name="QueryDocuments"
@@ -1780,7 +1784,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e56111d1-632a-449a-b148-971d5fea99bd+input&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;GetDocumentDetails1.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;QueryDocuments-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:jdbcQueryActivityInput>&#xa;            &lt;carrierId>&#xa;                &lt;xsl:value-of select=&quot;$GetDocumentDetails1.parameters/tns1:carrierId&quot;/>&#xa;            &lt;/carrierId>&#xa;        &lt;/tns:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e56111d1-632a-449a-b148-971d5fea99bd+input&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;GetDocumentDetails1.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;QueryDocuments-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns:jdbcQueryActivityInput>&#xa;            &lt;carrierId>&#xa;                &lt;xsl:value-of select=&quot;string($GetDocumentDetails1.parameters/tns1:carrierId)&quot;/>&#xa;            &lt;/carrierId>&#xa;            &lt;documentId>&#xa;                &lt;xsl:value-of select=&quot;string($GetDocumentDetails1.parameters/tns1:documentId)&quot;/>&#xa;            &lt;/documentId>&#xa;        &lt;/tns:jdbcQueryActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -1794,12 +1798,16 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT document_id, status, destination&#xd;&#xa;FROM sap_orders&#xd;&#xa;WHERE carrier_id = ?"
+                                    sqlStatement="SELECT document_id, status, destination&#xd;&#xa;FROM sap_orders&#xd;&#xa;WHERE carrier_id = ? OR document_id = ?"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
 
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="carrierId"/>
+
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="documentId"/>
                                     <columnMetadata
                                     columnIndex="1"
                                     columnName="document_id"
@@ -1924,10 +1932,10 @@
                                 portType="ns1:SapDocumentService"
                                 tibex:xpdlId="52a0ffff-adf1-4f0d-977c-12400b3fe781" variable="ConvertExternalCodeOut-input">
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://www.keypartner.com/logistic-sap/SapDocumentService" xmlns:tns1="http://www.keypartner.com/logistic-sap/SapDocuments" version="2.0"&gt;&lt;xsl:param name="QueryMapping"/&gt;&lt;xsl:template name="ConvertExternalCodeOut-input" match="/"&gt;&lt;tns2:ConvertExternalCodeResponse&gt;&lt;parameters&gt;&lt;tns1:ConvertExternalCodeResponse&gt;&lt;tns1:sapOrderId&gt;&lt;xsl:value-of select="$QueryMapping/Record[1]/sap_order_id"/&gt;&lt;/tns1:sapOrderId&gt;&lt;/tns1:ConvertExternalCodeResponse&gt;&lt;/parameters&gt;&lt;/tns2:ConvertExternalCodeResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns2="http://www.keypartner.com/logistic-sap/SapDocumentService" xmlns:tns1="http://www.keypartner.com/logistic-sap/SapDocuments" version="2.0"&gt;&lt;xsl:param name="QueryMapping"/&gt;&lt;xsl:template name="ConvertExternalCodeOut-input" match="/"&gt;&lt;tns2:ConvertExternalCodeResponse&gt;&lt;parameters&gt;&lt;tns1:ConvertExternalCodeResponse&gt;&lt;tns1:sapOrderId&gt;&lt;xsl:value-of select="string($QueryMapping/Record[1]/sap_order_id)"/&gt;&lt;/tns1:sapOrderId&gt;&lt;/tns1:ConvertExternalCodeResponse&gt;&lt;/parameters&gt;&lt;/tns2:ConvertExternalCodeResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.keypartner.com/logistic-sap/SapDocumentService&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;QueryMapping&quot;/>&#xa;    &lt;xsl:template name=&quot;ConvertExternalCodeOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ConvertExternalCodeResponse>&#xa;            &lt;tns1:sapOrderId>&#xa;                &lt;xsl:value-of select=&quot;$QueryMapping/Record[1]/sap_order_id&quot;/>&#xa;            &lt;/tns1:sapOrderId>&#xa;        &lt;/tns1:ConvertExternalCodeResponse>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.keypartner.com/logistic-sap/SapDocumentService&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;QueryMapping&quot;/>&#xa;    &lt;xsl:template name=&quot;ConvertExternalCodeOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ConvertExternalCodeResponse>&#xa;            &lt;tns1:sapOrderId>&#xa;                &lt;xsl:value-of select=&quot;string($QueryMapping/Record[1]/sap_order_id)&quot;/>&#xa;            &lt;/tns1:sapOrderId>&#xa;        &lt;/tns1:ConvertExternalCodeResponse>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <bpws:targets>
                                     <bpws:target linkName="QueryMappingToConvertExternalCodeOut"/>
