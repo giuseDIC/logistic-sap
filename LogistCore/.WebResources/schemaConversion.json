@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/LogistCore/Service Descriptors/logistcore.Main_Document-Main_Document.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.keypartner.com/logistic-sap/Documents"
+    },
+    {
+        "jsonSchemaLocation": "/LogistCore/Service Descriptors/logistcore.Main_Document-Main_Document.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.keypartner.com/logistic-sap/Error"
+    }
+]}

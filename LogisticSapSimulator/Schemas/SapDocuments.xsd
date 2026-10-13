@@ -25,7 +25,7 @@
                   
       <xs:sequence>
                         
-        <xs:element maxOccurs="unbounded" name="record">
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="record">
                               
           <xs:complexType>
                                     

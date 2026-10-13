@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.keypartner.com/logistic-sap/SapDocumentService" xmlns:tns0="http://www.keypartner.com/logistic-sap/SapDocuments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SapDocumentService" targetNamespace="http://www.keypartner.com/logistic-sap/SapDocumentService">
+  <wsdl:import namespace="http://www.keypartner.com/logistic-sap/SapDocuments"/>
+  <wsdl:message name="GetDocumentDetailsRequest">
+    <wsdl:part element="tns0:GetDocumentDetailsRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetDocumentDetailsResponse">
+    <wsdl:part element="tns0:GetDocumentDetailsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentStatusRequest">
+    <wsdl:part element="tns0:UpdateDocumentStatusRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentStatusResponse">
+    <wsdl:part element="tns0:UpdateDocumentStatusResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ConvertExternalCodeRequest">
+    <wsdl:part element="tns0:ConvertExternalCodeRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ConvertExternalCodeResponse">
+    <wsdl:part element="tns0:ConvertExternalCodeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SapDocumentService">
+    <wsdl:operation name="GetDocumentDetails">
+      <wsdl:input message="tns:GetDocumentDetailsRequest" name="GetDocumentDetailsInput"/>
+      <wsdl:output message="tns:GetDocumentDetailsResponse" name="GetDocumentDetailsOutput"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentStatus">
+      <wsdl:input message="tns:UpdateDocumentStatusRequest" name="UpdateDocumentStatusInput"/>
+      <wsdl:output message="tns:UpdateDocumentStatusResponse" name="UpdateDocumentStatusOutput"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertExternalCode">
+      <wsdl:input message="tns:ConvertExternalCodeRequest" name="ConvertExternalCodeInput"/>
+      <wsdl:output message="tns:ConvertExternalCodeResponse" name="ConvertExternalCodeOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="tns:SapDocumentService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetDocumentDetails">
+      <soap:operation soapAction="GetDocumentDetails" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentStatus">
+      <soap:operation soapAction="UpdateDocumentStatus" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertExternalCode">
+      <soap:operation soapAction="ConvertExternalCode" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SapDocumentService">
+    <wsdl:port binding="tns:SOAPServiceBinding" name="SapDocumentServiceSOAP">
+      <soap:address location="http://localhost:8081/SOAPServiceBinding/sapDocumentService/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

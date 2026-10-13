@@ -65,6 +65,20 @@
       <packaging:scalable>true</packaging:scalable>
       <packaging:overrideValue>false</packaging:overrideValue>
     </packaging:property>
+    <packaging:property>
+      <packaging:name>//LogistCore//sap.port</packaging:name>
+      <packaging:type>xsd:int</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
+    <packaging:property>
+      <packaging:name>//LogistCore//sap.host</packaging:name>
+      <packaging:type>xsd:string</packaging:type>
+      <packaging:visibility>public</packaging:visibility>
+      <packaging:scalable>true</packaging:scalable>
+      <packaging:overrideValue>false</packaging:overrideValue>
+    </packaging:property>
   </packaging:properties>
   <packaging:modules>
     <packaging:module>

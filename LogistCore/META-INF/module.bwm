@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_rpY3EMZBEfGRdJ1b-lCFdg" targetNamespace="http://tns.tibco.com/bw/composite/LogistCore" name="LogistCore" compositeext:version="1.0.0" compositeext:formatVersion="2">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:Documents="http://www.keypartner.com/logistic-sap/Documents" xmlns:Error="http://www.keypartner.com/logistic-sap/Error" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_rpY3EMZBEfGRdJ1b-lCFdg" targetNamespace="http://tns.tibco.com/bw/composite/LogistCore" name="LogistCore" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_WwnhFMb0EfG1fffaPRda5g" name="documents" promote="ComponentMain_Document/documents">
+    <sca:interface.wsdl xmi:id="_WwnhGMb0EfG1fffaPRda5g" interface="http://xmlns.example.com/20261013125342PLT#wsdl.interface(documents)" scaext:wsdlLocation="../Processes/logistcore/Main_Document.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_WwygMMb0EfG1fffaPRda5g" name="RestService" path="/documents" docBasePath="http://localhost:7777/LogistCore" docResourcePath="Main_Document" basePath="/" connector="logistcore.Documents" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/logistcore.Main_Document-Main_Document.json">
+      <operation xmi:id="_Ww2KkMb0EfG1fffaPRda5g" operationName="get" nickname="get-documents" httpMethod="GET" notes="getMain_Document" responseStyle="element" requestStyle="element" outputPartName="item">
+        <parameters xmi:id="_j4WMUMb0EfG1fffaPRda5g">
+          <parameterMapping xmi:id="_j4WMUcb0EfG1fffaPRda5g" parameterName="carrierId" parameterType="Query" dataType="string"/>
+        </parameters>
+        <responseStatus xmi:id="_lOs7QMb0EfG1fffaPRda5g" statusCode="400" reasonPhrase="Bad Request" elementQName="Error:ErrorResponse"/>
+        <responseStatus xmi:id="_lRP48Mb0EfG1fffaPRda5g" statusCode="500" reasonPhrase="Internal Server Error" elementQName="Error:ErrorResponse"/>
+        <responseStatus xmi:id="_lSTB0Mb0EfG1fffaPRda5g" statusCode="404" reasonPhrase="Not Found" elementQName="Error:ErrorResponse"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_WxSPcMb0EfG1fffaPRda5g"/>
+      <import xmi:id="_n1L1UMb0EfG1fffaPRda5g" importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.keypartner.com/logistic-sap/Error"/>
+      <advancedConfig xmi:id="_WwygMcb0EfG1fffaPRda5g" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Ww2Kkcb0EfG1fffaPRda5g" bindingName="RestService"/>
+  </sca:service>
   <sca:property xmi:id="_sY0I4MZBEfGRdJ1b-lCFdg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_sY9S0MZBEfGRdJ1b-lCFdg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_sY9S0cZBEfGRdJ1b-lCFdg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -9,4 +28,12 @@
   <sca:property xmi:id="_sY9S1cZBEfGRdJ1b-lCFdg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_sY9S1sZBEfGRdJ1b-lCFdg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_sZSC8MZBEfGRdJ1b-lCFdg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_WMOQAMbzEfG1fffaPRda5g" name="sap.host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_WPiCsMbzEfG1fffaPRda5g" name="sap.port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_WwnhEMb0EfG1fffaPRda5g" name="ComponentMain_Document" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_WwnhEcb0EfG1fffaPRda5g" processName="logistcore.Main_Document"/>
+    <sca:service xmi:id="_WwnhEsb0EfG1fffaPRda5g" name="documents">
+      <sca:interface.wsdl xmi:id="_WwnhE8b0EfG1fffaPRda5g" interface="http://xmlns.example.com/20261013125342PLT#wsdl.interface(documents)" scaext:wsdlLocation="../Processes/logistcore/Main_Document.bwp"/>
+    </sca:service>
+  </sca:component>
 </sca:composite>
