@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:tns="http://www.keypartner.com/logistic-sap/SapDocuments" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.keypartner.com/logistic-sap/SapDocuments">
+      
+  <!-- GetDocumentDetailsRequest  -->
+      
+  <xs:element name="GetDocumentDetailsRequest">
+            
+    <xs:complexType>
+                  
+      <xs:sequence>
+                        
+        <xs:element name="carrierId" type="xs:string"/>
+                    
+      </xs:sequence>
+              
+    </xs:complexType>
+        
+  </xs:element>
+      
+  <!-- GetDocumentDetailsResponse  -->
+      
+  <xs:element name="GetDocumentDetailsResponse">
+            
+    <xs:complexType>
+                  
+      <xs:sequence>
+                        
+        <xs:element maxOccurs="unbounded" name="record">
+                              
+          <xs:complexType>
+                                    
+            <xs:sequence>
+                                          
+              <xs:element name="documentId" type="xs:string"/>
+                                          
+              <xs:element name="status" type="tns:Status"/>
+                                          
+              <xs:element name="destination" type="xs:string"/>
+                                      
+            </xs:sequence>
+                                
+          </xs:complexType>
+                          
+        </xs:element>
+                    
+      </xs:sequence>
+              
+    </xs:complexType>
+        
+  </xs:element>
+      
+  <!-- UpdateDocumentStatusRequest  -->
+      
+  <xs:element name="UpdateDocumentStatusRequest">
+            
+    <xs:complexType>
+                  
+      <xs:sequence>
+                        
+        <xs:element name="documentId" type="xs:string"/>
+                        
+        <xs:element name="status" type="tns:Status"/>
+                    
+      </xs:sequence>
+              
+    </xs:complexType>
+        
+  </xs:element>
+      
+  <!-- UpdateDocumentStatusResponse -->
+      
+  <xs:element name="UpdateDocumentStatusResponse">
+            
+    <xs:complexType>
+                  
+      <xs:sequence>
+                        
+        <xs:element name="confirmation" type="xs:boolean"/>
+                    
+      </xs:sequence>
+              
+    </xs:complexType>
+        
+  </xs:element>
+      
+  <!-- ConvertExternalCodeRequest -->
+      
+  <xs:element name="ConvertExternalCodeRequest">
+            
+    <xs:complexType>
+                  
+      <xs:sequence>
+                        
+        <xs:element name="externalCode" type="xs:string"/>
+                    
+      </xs:sequence>
+              
+    </xs:complexType>
+        
+  </xs:element>
+      
+  <!-- ConvertExternalCodeResponse -->
+      
+  <xs:element name="ConvertExternalCodeResponse">
+            
+    <xs:complexType>
+                  
+      <xs:sequence>
+                        
+        <xs:element name="sapOrderId" type="xs:string"/>
+                    
+      </xs:sequence>
+              
+    </xs:complexType>
+        
+  </xs:element>
+      
+  <!-- Tipi -->
+      
+  <xs:simpleType name="Status">
+            
+    <xs:restriction base="xs:string">
+                  
+      <xs:enumeration value="DA GESTIRE"/>
+                  
+      <xs:enumeration value="GESTITO"/>
+                  
+      <xs:enumeration value="CONSEGNATO"/>
+              
+    </xs:restriction>
+        
+  </xs:simpleType>
+  
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_oCaWEMZREfGRdJ1b-lCFdg" targetNamespace="http://tns.tibco.com/bw/composite/LogisticSapConnection" name="LogisticSapConnection" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_oHBwUMZREfGRdJ1b-lCFdg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oHBwUcZREfGRdJ1b-lCFdg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oHBwUsZREfGRdJ1b-lCFdg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oHIeAMZREfGRdJ1b-lCFdg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oHJsIMZREfGRdJ1b-lCFdg" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oHJsIcZREfGRdJ1b-lCFdg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oHJsIsZREfGRdJ1b-lCFdg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oHJsI8ZREfGRdJ1b-lCFdg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oHJsJMZREfGRdJ1b-lCFdg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_2e3ZUMblEfG1fffaPRda5g" name="db.url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2mRB0MblEfG1fffaPRda5g" name="db.username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_5jkgcMblEfG1fffaPRda5g" name="db.password" type="property:password" scaext:simpleValue="#!y45SDNje0oJCsMAKdLsf8g==" publicAccess="true" scalable="true"/>
+</sca:composite>

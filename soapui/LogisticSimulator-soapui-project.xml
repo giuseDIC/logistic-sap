@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d1309b49-8a3d-48ad-81ea-d86ef5e1ca3b" activeEnvironment="Default" name="LogisticSimulator" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ca60c81f-dad0-4114-962e-ecebef15bda5" wsaVersion="NONE" name="SOAPServiceBinding" type="wsdl" bindingName="{http://www.tibco.com/bffb13962b904de8b6e0a077bb9db43d/SOAPServiceBinding}SOAPServiceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/DEV/TIBCO/logistic-sap/LogisticSapSimulator/Service%20Descriptors/SapDocumentService_gen1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\DEV\TIBCO\logistic-sap\LogisticSapSimulator\Service%20Descriptors\SapDocumentService_gen1.wsdl"><con:part><con:url>file:\C:\DEV\TIBCO\logistic-sap\LogisticSapSimulator\Service%20Descriptors\SapDocumentService_gen1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SapDocumentService" targetNamespace="http://www.tibco.com/bffb13962b904de8b6e0a077bb9db43d/SOAPServiceBinding" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.tibco.com/bffb13962b904de8b6e0a077bb9db43d/SOAPServiceBinding" xmlns:tns0="http://www.keypartner.com/logistic-sap/SapDocumentService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="SapDocumentService.wsdl" namespace="http://www.keypartner.com/logistic-sap/SapDocumentService"/>
+  <wsdl:binding name="SOAPServiceBinding" type="tns0:SapDocumentService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetDocumentDetails">
+      <soap:operation soapAction="GetDocumentDetails" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentStatus">
+      <soap:operation soapAction="UpdateDocumentStatus" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertExternalCode">
+      <soap:operation soapAction="ConvertExternalCode" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SapDocumentService">
+    <wsdl:port binding="tns:SOAPServiceBinding" name="SapDocumentServiceSOAP">
+      <soap:address location="http://localhost:8081/SOAPServiceBinding/sapDocumentService/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\DEV\TIBCO\logistic-sap\LogisticSapSimulator\Service%20Descriptors\SapDocumentService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SapDocumentService" targetNamespace="http://www.keypartner.com/logistic-sap/SapDocumentService" xmlns:extns="http://www.keypartner.com/logistic-sap/SapDocuments" xmlns:tns="http://www.keypartner.com/logistic-sap/SapDocumentService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="../Schemas/SapDocuments.xsd" namespace="http://www.keypartner.com/logistic-sap/SapDocuments"/>
+  <wsdl:message name="GetDocumentDetailsRequest">
+    <wsdl:part element="extns:GetDocumentDetailsRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetDocumentDetailsResponse">
+    <wsdl:part element="extns:GetDocumentDetailsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentStatusRequest">
+    <wsdl:part element="extns:UpdateDocumentStatusRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentStatusResponse">
+    <wsdl:part element="extns:UpdateDocumentStatusResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ConvertExternalCodeRequest">
+    <wsdl:part element="extns:ConvertExternalCodeRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ConvertExternalCodeResponse">
+    <wsdl:part element="extns:ConvertExternalCodeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SapDocumentService">
+    <wsdl:operation name="GetDocumentDetails">
+      <wsdl:input message="tns:GetDocumentDetailsRequest" name="GetDocumentDetailsInput"/>
+      <wsdl:output message="tns:GetDocumentDetailsResponse" name="GetDocumentDetailsOutput"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentStatus">
+      <wsdl:input message="tns:UpdateDocumentStatusRequest" name="UpdateDocumentStatusInput"/>
+      <wsdl:output message="tns:UpdateDocumentStatusResponse" name="UpdateDocumentStatusOutput"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertExternalCode">
+      <wsdl:input message="tns:ConvertExternalCodeRequest" name="ConvertExternalCodeInput"/>
+      <wsdl:output message="tns:ConvertExternalCodeResponse" name="ConvertExternalCodeOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\DEV\TIBCO\logistic-sap\LogisticSapSimulator\Schemas\SapDocuments.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://www.keypartner.com/logistic-sap/SapDocuments" xmlns:tns="http://www.keypartner.com/logistic-sap/SapDocuments" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--GetDocumentDetailsRequest-->
+  <xs:element name="GetDocumentDetailsRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="carrierId" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--GetDocumentDetailsResponse-->
+  <xs:element name="GetDocumentDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="record">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="documentId" type="xs:string"/>
+              <xs:element name="status" type="tns:Status"/>
+              <xs:element name="destination" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--UpdateDocumentStatusRequest-->
+  <xs:element name="UpdateDocumentStatusRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="documentId" type="xs:string"/>
+        <xs:element name="status" type="tns:Status"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--UpdateDocumentStatusResponse-->
+  <xs:element name="UpdateDocumentStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="confirmation" type="xs:boolean"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--ConvertExternalCodeRequest-->
+  <xs:element name="ConvertExternalCodeRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="externalCode" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--ConvertExternalCodeResponse-->
+  <xs:element name="ConvertExternalCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="sapOrderId" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!--Tipi-->
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DA GESTIRE"/>
+      <xs:enumeration value="GESTITO"/>
+      <xs:enumeration value="CONSEGNATO"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8081/SOAPServiceBinding/sapDocumentService/</con:endpoint></con:endpoints><con:operation id="aa5538fb-42c6-4f9a-88d2-be0bc4e9671c" isOneWay="false" action="ConvertExternalCode" name="ConvertExternalCode" bindingOperationName="ConvertExternalCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bf780ecc-352c-466c-bf25-cbc83927309d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/SOAPServiceBinding/sapDocumentService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sap="http://www.keypartner.com/logistic-sap/SapDocuments">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sap:ConvertExternalCodeRequest>\r
+         <sap:externalCode>EXT-998877</sap:externalCode>\r
+      </sap:ConvertExternalCodeRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="ConvertExternalCode"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="929e3efa-f07e-4d39-ad96-2188b156c211" isOneWay="false" action="GetDocumentDetails" name="GetDocumentDetails" bindingOperationName="GetDocumentDetails" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1bc5a80c-cc1f-448c-af0e-e0ac5e9dde19" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/SOAPServiceBinding/sapDocumentService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sap="http://www.keypartner.com/logistic-sap/SapDocuments">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sap:GetDocumentDetailsRequest>\r
+         <sap:carrierId>DHL001</sap:carrierId>\r
+      </sap:GetDocumentDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetDocumentDetails"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e5d65cfe-ef0b-4ed5-a45c-8b746299e383" isOneWay="false" action="UpdateDocumentStatus" name="UpdateDocumentStatus" bindingOperationName="UpdateDocumentStatus" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bd9ed784-331c-4f28-bc25-1ed475773ccf" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/SOAPServiceBinding/sapDocumentService/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sap="http://www.keypartner.com/logistic-sap/SapDocuments">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <sap:UpdateDocumentStatusRequest>\r
+         <sap:documentId>DOC-2026-003</sap:documentId>\r
+         <sap:status>GESTITO</sap:status>\r
+      </sap:UpdateDocumentStatusRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="UpdateDocumentStatus"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

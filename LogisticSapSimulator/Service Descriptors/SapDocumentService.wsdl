@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:extns="http://www.keypartner.com/logistic-sap/SapDocuments" xmlns:tns="http://www.keypartner.com/logistic-sap/SapDocumentService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SapDocumentService" targetNamespace="http://www.keypartner.com/logistic-sap/SapDocumentService">
+  <wsdl:import location="../Schemas/SapDocuments.xsd" namespace="http://www.keypartner.com/logistic-sap/SapDocuments"/>
+  <wsdl:message name="GetDocumentDetailsRequest">
+    <wsdl:part element="extns:GetDocumentDetailsRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetDocumentDetailsResponse">
+    <wsdl:part element="extns:GetDocumentDetailsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentStatusRequest">
+    <wsdl:part element="extns:UpdateDocumentStatusRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentStatusResponse">
+    <wsdl:part element="extns:UpdateDocumentStatusResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ConvertExternalCodeRequest">
+    <wsdl:part element="extns:ConvertExternalCodeRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ConvertExternalCodeResponse">
+    <wsdl:part element="extns:ConvertExternalCodeResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="SapDocumentService">
+    <wsdl:operation name="GetDocumentDetails">
+      <wsdl:input message="tns:GetDocumentDetailsRequest" name="GetDocumentDetailsInput"/>
+      <wsdl:output message="tns:GetDocumentDetailsResponse" name="GetDocumentDetailsOutput"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocumentStatus">
+      <wsdl:input message="tns:UpdateDocumentStatusRequest" name="UpdateDocumentStatusInput"/>
+      <wsdl:output message="tns:UpdateDocumentStatusResponse" name="UpdateDocumentStatusOutput"/>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertExternalCode">
+      <wsdl:input message="tns:ConvertExternalCodeRequest" name="ConvertExternalCodeInput"/>
+      <wsdl:output message="tns:ConvertExternalCodeResponse" name="ConvertExternalCodeOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

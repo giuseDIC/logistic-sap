@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:SapDocumentService="http://www.keypartner.com/logistic-sap/SapDocumentService" xmlns:SapDocuments="http://www.keypartner.com/logistic-sap/SapDocuments" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_jlkKkMZBEfGRdJ1b-lCFdg" targetNamespace="http://tns.tibco.com/bw/composite/LogisticSapSimulator" name="LogisticSapSimulator" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_auaDAcZJEfGRdJ1b-lCFdg" name="SapDocumentService" promote="ComponentSapDocumentService/SapDocumentService">
+    <sca:interface.wsdl xmi:id="_aup6oMZJEfGRdJ1b-lCFdg" interface="http://www.keypartner.com/logistic-sap/SapDocumentService#wsdl.interface(SapDocumentService)" scaext:wsdlLocation="../Service%20Descriptors/SapDocumentService.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_6u5VQMZPEfGRdJ1b-lCFdg" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/bffb13962b904de8b6e0a077bb9db43d/SOAPServiceBinding" portTypeQName="SapDocumentService:SapDocumentService" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/LogisticSapSimulator/Service%20Descriptors/SapDocumentService.wsdl">
+      <bindingType xmi:id="_6u5VQcZPEfGRdJ1b-lCFdg"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_izKfcMZQEfGRdJ1b-lCFdg" endpointURI="/SOAPServiceBinding/sapDocumentService/" httpConnector="logisticsapsimulator.SapSimulatorHttpConnector"/>
+      <operationConfiguration xmi:id="_6u5VQsZPEfGRdJ1b-lCFdg" operationName="GetDocumentDetails" action="GetDocumentDetails" actionNeeded="true">
+        <bindingType xmi:id="_6u5VQ8ZPEfGRdJ1b-lCFdg"/>
+        <messageConfiguration xmi:id="_6u5VRMZPEfGRdJ1b-lCFdg" messageQName="SapDocumentService:GetDocumentDetailsRequest" wsdlLocation="platform:/resource/LogisticSapSimulator/Service%20Descriptors/SapDocumentService.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_6u5VRcZPEfGRdJ1b-lCFdg" partName="parameters" partElementName="SapDocuments:GetDocumentDetailsRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_6u5VRsZPEfGRdJ1b-lCFdg" messageQName="SapDocumentService:GetDocumentDetailsResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/LogisticSapSimulator/Service%20Descriptors/SapDocumentService.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_6u5VR8ZPEfGRdJ1b-lCFdg" partName="parameters" partElementName="SapDocuments:GetDocumentDetailsResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_6u7KfMZPEfGRdJ1b-lCFdg">
+          <inputMapping xmi:id="_6u7KfcZPEfGRdJ1b-lCFdg"/>
+          <outputMapping xmi:id="_6u7KfsZPEfGRdJ1b-lCFdg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_6u7KcMZPEfGRdJ1b-lCFdg" operationName="UpdateDocumentStatus" action="UpdateDocumentStatus" actionNeeded="true">
+        <bindingType xmi:id="_6u7KccZPEfGRdJ1b-lCFdg"/>
+        <messageConfiguration xmi:id="_6u7KcsZPEfGRdJ1b-lCFdg" messageQName="SapDocumentService:UpdateDocumentStatusRequest" wsdlLocation="platform:/resource/LogisticSapSimulator/Service%20Descriptors/SapDocumentService.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_6u7Kc8ZPEfGRdJ1b-lCFdg" partName="parameters" partElementName="SapDocuments:UpdateDocumentStatusRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_6u7KdMZPEfGRdJ1b-lCFdg" messageQName="SapDocumentService:UpdateDocumentStatusResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/LogisticSapSimulator/Service%20Descriptors/SapDocumentService.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_6u7KdcZPEfGRdJ1b-lCFdg" partName="parameters" partElementName="SapDocuments:UpdateDocumentStatusResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_6u7Kf8ZPEfGRdJ1b-lCFdg">
+          <inputMapping xmi:id="_6u7KgMZPEfGRdJ1b-lCFdg"/>
+          <outputMapping xmi:id="_6u7KgcZPEfGRdJ1b-lCFdg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_6u7KdsZPEfGRdJ1b-lCFdg" operationName="ConvertExternalCode" action="ConvertExternalCode" actionNeeded="true">
+        <bindingType xmi:id="_6u7Kd8ZPEfGRdJ1b-lCFdg"/>
+        <messageConfiguration xmi:id="_6u7KeMZPEfGRdJ1b-lCFdg" messageQName="SapDocumentService:ConvertExternalCodeRequest" wsdlLocation="platform:/resource/LogisticSapSimulator/Service%20Descriptors/SapDocumentService.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_6u7KecZPEfGRdJ1b-lCFdg" partName="parameters" partElementName="SapDocuments:ConvertExternalCodeRequest"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_6u7KesZPEfGRdJ1b-lCFdg" messageQName="SapDocumentService:ConvertExternalCodeResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/LogisticSapSimulator/Service%20Descriptors/SapDocumentService.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_6u7Ke8ZPEfGRdJ1b-lCFdg" partName="parameters" partElementName="SapDocuments:ConvertExternalCodeResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_6u7KgsZPEfGRdJ1b-lCFdg">
+          <inputMapping xmi:id="_6u7Kg8ZPEfGRdJ1b-lCFdg"/>
+          <outputMapping xmi:id="_6u7KhMZPEfGRdJ1b-lCFdg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_6u7KhcZPEfGRdJ1b-lCFdg" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_mw8hcMZBEfGRdJ1b-lCFdg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mxG5gMZBEfGRdJ1b-lCFdg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mxG5gcZBEfGRdJ1b-lCFdg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mxG5gsZBEfGRdJ1b-lCFdg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mxG5g8ZBEfGRdJ1b-lCFdg" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mxG5hMZBEfGRdJ1b-lCFdg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mxG5hcZBEfGRdJ1b-lCFdg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mxG5hsZBEfGRdJ1b-lCFdg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mxG5h8ZBEfGRdJ1b-lCFdg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_BgisYMZJEfGRdJ1b-lCFdg" name="ComponentSapDocumentService" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_BgisYcZJEfGRdJ1b-lCFdg" processName="logisticsapsimulator.SapDocumentService"/>
+    <sca:service xmi:id="_auYN0MZJEfGRdJ1b-lCFdg" name="SapDocumentService">
+      <sca:interface.wsdl xmi:id="_auaDAMZJEfGRdJ1b-lCFdg" interface="http://www.keypartner.com/logistic-sap/SapDocumentService#wsdl.interface(SapDocumentService)" scaext:wsdlLocation="../Service%20Descriptors/SapDocumentService.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>
