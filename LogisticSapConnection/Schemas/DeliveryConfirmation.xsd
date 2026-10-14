@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.keypartner.com/logistic-sap/DeliveryConfirmation"
+    xmlns:tns="http://www.keypartner.com/logistic-sap/DeliveryConfirmation"
+    elementFormDefault="qualified">
+
+    <!-- Messaggio JMS su shipping.delivery.confirm.queue: Core -> Consumer -->
+    <xs:element name="DeliveryConfirmation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sapOrderId" type="xs:string"/>
+                <xs:element name="deliveryDate" type="xs:dateTime"/>
+                <xs:element name="notes" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
