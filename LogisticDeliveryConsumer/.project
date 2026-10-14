@@ -3,6 +3,7 @@
 	<name>LogisticDeliveryConsumer</name>
 	<comment></comment>
 	<projects>
+		<project>LogisticSapConnection</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
