@@ -50,6 +50,7 @@
   <sca:property xmi:id="_WMOQAMbzEfG1fffaPRda5g" name="sap.host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_WPiCsMbzEfG1fffaPRda5g" name="sap.port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_CVaYMMekEfGmgsoEXGghrQ" name="ems.queue.delivery" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_rUoiMMe5EfG8jtdKe8ndVA" name="http.port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_WwnhEMb0EfG1fffaPRda5g" name="ComponentMain_Document" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_WwnhEcb0EfG1fffaPRda5g" processName="logistcore.Main_Document"/>
     <sca:service xmi:id="_WwnhEsb0EfG1fffaPRda5g" name="documents">

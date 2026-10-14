@@ -1,0 +1,425 @@
+{
+	"info": {
+		"_postman_id": "901ac229-0dbe-49c8-afc2-6870659b761d",
+		"name": "LogisticsSap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "58281950",
+		"_collection_link": "https://giuseppe-dicienzo-4503067.postman.co/workspace/Giuseppe's-Workspace~b41331fc-29c6-475d-861a-e01d0318e7e7/collection/58281950-901ac229-0dbe-49c8-afc2-6870659b761d?action=share&source=collection_link&creator=58281950"
+	},
+	"item": [
+		{
+			"name": "F1",
+			"item": [
+				{
+					"name": "F1-1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 con due documenti GESTITO\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    const docs = pm.response.json().documents;\r",
+									"    pm.expect(docs).to.have.lengthOf(2);\r",
+									"    docs.forEach(d => pm.expect(d.status).to.eql(\"GESTITO\"));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents?carrierId=DHL001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "carrierId",
+									"value": "DHL001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F1-2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 senza documenti\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.expect(pm.response.json().documents).to.be.undefined;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents?carrierId=DHL001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "carrierId",
+									"value": "DHL001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F1-3a",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"400 CARRIER_ID_REQUIRED\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.expect(pm.response.json().code).to.eql(\"CARRIER_ID_REQUIRED\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents?carrierId=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "carrierId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F1-3b",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"404 CARRIER_NOT_FOUND\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"    pm.expect(pm.response.json().code).to.eql(\"CARRIER_NOT_FOUND\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents?carrierId=XYZ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "carrierId",
+									"value": "XYZ"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F1-4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"500 INTERNAL_ERROR\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"    pm.expect(pm.response.json().code).to.eql(\"INTERNAL_ERROR\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents?carrierId=DHL001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "carrierId",
+									"value": "DHL001"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "F2",
+			"item": [
+				{
+					"name": "F2-1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"202 presa in carico\", function () {\r",
+									"    pm.response.to.have.status(202);\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"Presa in carico della consegna effettuata\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"externalOrderCode\": \"EXT-998877\",\r\n  \"deliveryDate\": \"2026-05-15T14:30:00Z\",\r\n  \"notes\": \"Consegnato al portiere\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/deliveries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deliveries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F2-2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/documents?carrierId=DHL001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"documents"
+							],
+							"query": [
+								{
+									"key": "carrierId",
+									"value": "DHL001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F2-3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"404 ORDER_NOT_FOUND\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"    pm.expect(pm.response.json().code).to.eql(\"ORDER_NOT_FOUND\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"externalOrderCode\": \"EXT-000\",\r\n  \"deliveryDate\": \"2026-05-15T14:30:00Z\",\r\n  \"notes\": \"Consegnato al portiere\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/deliveries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deliveries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F2-4",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"400 DELIVERY_DATA_REQUIRED\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"    pm.expect(pm.response.json().code).to.eql(\"DELIVERY_DATA_REQUIRED\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"deliveryDate\": \"2026-05-15T14:30:00Z\",\r\n  \"notes\": \"Consegnato al portiere\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/deliveries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deliveries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "F2-5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"409 INVALID_ORDER_STATUS\", function () {\r",
+									"    pm.response.to.have.status(409);\r",
+									"    pm.expect(pm.response.json().code).to.eql(\"INVALID_ORDER_STATUS\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"externalOrderCode\": \"EXT-998877\",\r\n    \"deliveryDate\": \"2026-05-15T14:30:00Z\",\r\n    \"notes\": \"Consegnato al portiere\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/deliveries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deliveries"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

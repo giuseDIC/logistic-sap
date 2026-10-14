@@ -1207,6 +1207,8 @@
             namespace="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+08c8248c-1b84-40f5-ad32-a5fffef8f692+input" prefix="tns3"/>
+        <tibex:namespaceItem
+            namespace="http://www.keypartner.com/logistic-sap/DeliveryConfirmation" prefix="tns4"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.keypartner.com/logistic-sap/DeliveryConfirmation"/>
     <bpws:variables>
@@ -1348,7 +1350,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns4=&quot;http://www.keypartner.com/logistic-sap/DeliveryConfirmation&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseJSON&quot;/>&#xa;    &lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;Consegna ricevuta: &amp;quot;, $ParseJSON/tns4:sapOrderId, xsd:string($ParseJSON/tns4:deliveryDate))&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns1:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns4=&quot;http://www.keypartner.com/logistic-sap/DeliveryConfirmation&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;LogDelivery-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;Consegna ricevuta: &amp;quot;, $ParseJSON/tns4:sapOrderId,&amp;quot; &amp;quot;, xsd:string($ParseJSON/tns4:deliveryDate))&quot;/>&lt;/message>&lt;/tns1:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1407,7 +1409,7 @@
                         </bpws:sources>
                         <tibex:inputBindings>
                             <tibex:inputBinding
-                                expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+08c8248c-1b84-40f5-ad32-a5fffef8f692+input&quot; xmlns:tns=&quot;http://www.keypartner.com/logistic-sap/DeliveryConfirmation&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;UpdateOrderDelivered-input&quot; match=&quot;/&quot;>&lt;tns3:jdbcUpdateActivityInput>&lt;documentId>&lt;xsl:value-of select=&quot;$ParseJSON/tns:sapOrderId&quot;/>&lt;/documentId>&lt;/tns3:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+08c8248c-1b84-40f5-ad32-a5fffef8f692+input&quot; xmlns:tns4=&quot;http://www.keypartner.com/logistic-sap/DeliveryConfirmation&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseJSON&quot;/>&#xa;    &lt;xsl:template name=&quot;UpdateOrderDelivered-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:jdbcUpdateActivityInput>&#xa;            &lt;documentId>&#xa;                &lt;xsl:value-of select=&quot;$ParseJSON/tns4:sapOrderId&quot;/>&#xa;            &lt;/documentId>&#xa;        &lt;/tns3:jdbcUpdateActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                         </tibex:inputBindings>
                         <tibex:config>
                             <bwext:BWActivity
@@ -1487,7 +1489,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns=&quot;http://www.keypartner.com/logistic-sap/DeliveryConfirmation&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ParseJSON&quot;/>&lt;xsl:template name=&quot;LogSaved-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;Consegna registrata: &amp;quot;,$ParseJSON/tns:sapOrderId)&quot;/>&lt;/message>&lt;/tns1:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tns4=&quot;http://www.keypartner.com/logistic-sap/DeliveryConfirmation&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;ParseJSON&quot;/>&#xa;    &lt;xsl:template name=&quot;LogSaved-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;Consegna registrata: &amp;quot;,$ParseJSON/tns4:sapOrderId)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns1:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

@@ -16,12 +16,12 @@
     <tibex:VariableDescriptor type="MemorySaving">
         <task name="End">
             <endingVariables>
-                <variable>UpdateDocumentStatu</variable>
+                <variable>DocumentStatusUpdate</variable>
             </endingVariables>
         </task>
-        <task name="UpdateDocumentStatu">
+        <task name="DocumentStatusUpdate">
             <endingVariables>
-                <variable>UpdateDocumentStatu-input</variable>
+                <variable>DocumentStatusUpdate-input</variable>
                 <variable>Start</variable>
             </endingVariables>
         </task>
@@ -630,11 +630,11 @@
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns1:UpdateDocumentStatusRequest"
-            name="UpdateDocumentStatu-input" sca-bpel:internal="true"/>
+            name="DocumentStatusUpdate-input" sca-bpel:internal="true"/>
         <bpws:variable messageType="ns1:UpdateDocumentStatusResponse"
-            name="UpdateDocumentStatu" sca-bpel:internal="true"/>
+            name="DocumentStatusUpdate" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ActivityErrorData"
-            name="_error_UpdateDocumentStatu" sca-bpel:internal="true"/>
+            name="_error_DocumentStatusUpdate" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:UpdateDocumentStatusRequest"
             name="Start" sca-bpel:internal="true" tibex:parameter="in"/>
@@ -670,7 +670,7 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension
-                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;UpdateDocumentStatu&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns1:UpdateDocumentStatusResponse>&lt;tns1:confirmation>&lt;xsl:value-of select=&quot;$UpdateDocumentStatu/parameters/tns1:UpdateDocumentStatusResponse/tns1:confirmation&quot;/>&lt;/tns1:confirmation>&lt;/tns1:UpdateDocumentStatusResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;DocumentStatusUpdate&quot;/>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:UpdateDocumentStatusResponse>&#xa;            &lt;tns1:confirmation>&#xa;                &lt;xsl:value-of select=&quot;$DocumentStatusUpdate/parameters/tns1:UpdateDocumentStatusResponse/tns1:confirmation&quot;/>&#xa;            &lt;/tns1:confirmation>&#xa;        &lt;/tns1:UpdateDocumentStatusResponse>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                     inputVariable="End-input" name="End"
                     tibex:xpdlId="c3d204ee-0044-4ee4-a56a-53010fece8f5" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
@@ -679,7 +679,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;UpdateDocumentStatu.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:UpdateDocumentStatusResponse>&#xa;            &lt;tns1:confirmation>&#xa;                &lt;xsl:value-of select=&quot;$UpdateDocumentStatu.parameters/tns1:confirmation&quot;/>&#xa;            &lt;/tns1:confirmation>&#xa;        &lt;/tns1:UpdateDocumentStatusResponse>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.keypartner.com/logistic-sap/SapDocuments&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;DocumentStatusUpdate.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:UpdateDocumentStatusResponse>&#xa;            &lt;tns1:confirmation>&#xa;                &lt;xsl:value-of select=&quot;$DocumentStatusUpdate.parameters/tns1:confirmation&quot;/>&#xa;            &lt;/tns1:confirmation>&#xa;        &lt;/tns1:UpdateDocumentStatusResponse>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -697,10 +697,10 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:invoke inputVariable="UpdateDocumentStatu-input"
-                name="UpdateDocumentStatu"
+            <bpws:invoke inputVariable="DocumentStatusUpdate-input"
+                name="DocumentStatusUpdate"
                 operation="UpdateDocumentStatus"
-                outputVariable="UpdateDocumentStatu"
+                outputVariable="DocumentStatusUpdate"
                 partnerLink="SapDocumentService"
                 portType="ns1:SapDocumentService" tibex:xpdlId="5e5b47cf-ccff-4bd3-9265-3c52f4a43c2c">
                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;

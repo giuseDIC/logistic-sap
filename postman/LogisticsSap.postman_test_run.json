@@ -1,0 +1,301 @@
+{
+	"id": "4b7effde-4460-4227-87b9-34fa0ec495f0",
+	"name": "LogisticsSap",
+	"timestamp": "2026-10-14T10:56:13.039Z",
+	"collection_id": "58281950-901ac229-0dbe-49c8-afc2-6870659b761d",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 9,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-10-14T10:56:11.720Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "f42d6f79-90a7-4db8-a036-5e0386358d32",
+			"name": "F1-1",
+			"url": "http://localhost:8080/documents?carrierId=DHL001",
+			"time": 131,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"200 con due documenti GESTITO": true
+			},
+			"testPassFailCounts": {
+				"200 con due documenti GESTITO": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				131
+			],
+			"allTests": [
+				{
+					"200 con due documenti GESTITO": true
+				}
+			]
+		},
+		{
+			"id": "2b1765a6-b508-48bf-a7f5-62095d051951",
+			"name": "F1-2",
+			"url": "http://localhost:8080/documents?carrierId=DHL001",
+			"time": 52,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"200 senza documenti": true
+			},
+			"testPassFailCounts": {
+				"200 senza documenti": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				52
+			],
+			"allTests": [
+				{
+					"200 senza documenti": true
+				}
+			]
+		},
+		{
+			"id": "d73baaa1-9c6b-41e6-bb4d-46ac2770bcd3",
+			"name": "F1-3a",
+			"url": "http://localhost:8080/documents?carrierId=",
+			"time": 15,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 CARRIER_ID_REQUIRED": true
+			},
+			"testPassFailCounts": {
+				"400 CARRIER_ID_REQUIRED": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"400 CARRIER_ID_REQUIRED": true
+				}
+			]
+		},
+		{
+			"id": "a8e0cdbb-79af-4f79-a5eb-15ca76ca127a",
+			"name": "F1-3b",
+			"url": "http://localhost:8080/documents?carrierId=XYZ",
+			"time": 45,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 CARRIER_NOT_FOUND": true
+			},
+			"testPassFailCounts": {
+				"404 CARRIER_NOT_FOUND": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				45
+			],
+			"allTests": [
+				{
+					"404 CARRIER_NOT_FOUND": true
+				}
+			]
+		},
+		{
+			"id": "1f49e57e-f2c5-41dd-85e3-7faeeead51f7",
+			"name": "F2-1",
+			"url": "http://localhost:8080/deliveries",
+			"time": 81,
+			"responseCode": {
+				"code": 202,
+				"name": "Accepted"
+			},
+			"tests": {
+				"202 presa in carico": true
+			},
+			"testPassFailCounts": {
+				"202 presa in carico": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				81
+			],
+			"allTests": [
+				{
+					"202 presa in carico": true
+				}
+			]
+		},
+		{
+			"id": "9b38e185-9cbe-43b3-b787-b86edc03f256",
+			"name": "F2-2",
+			"url": "http://localhost:8080/documents?carrierId=DHL001",
+			"time": 54,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"200": true
+			},
+			"testPassFailCounts": {
+				"200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				54
+			],
+			"allTests": [
+				{
+					"200": true
+				}
+			]
+		},
+		{
+			"id": "21fb74be-52bc-4fd3-8c78-6ac7807294df",
+			"name": "F2-3",
+			"url": "http://localhost:8080/deliveries",
+			"time": 40,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 ORDER_NOT_FOUND": true
+			},
+			"testPassFailCounts": {
+				"404 ORDER_NOT_FOUND": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				40
+			],
+			"allTests": [
+				{
+					"404 ORDER_NOT_FOUND": true
+				}
+			]
+		},
+		{
+			"id": "65c844fb-f02e-4cff-8f04-ad5e517160f1",
+			"name": "F2-4",
+			"url": "http://localhost:8080/deliveries",
+			"time": 15,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 DELIVERY_DATA_REQUIRED": true
+			},
+			"testPassFailCounts": {
+				"400 DELIVERY_DATA_REQUIRED": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"400 DELIVERY_DATA_REQUIRED": true
+				}
+			]
+		},
+		{
+			"id": "b74b8532-ede7-49c0-b1d7-9bc75434bd81",
+			"name": "F2-5",
+			"url": "http://localhost:8080/deliveries",
+			"time": 77,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"409 INVALID_ORDER_STATUS": true
+			},
+			"testPassFailCounts": {
+				"409 INVALID_ORDER_STATUS": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				77
+			],
+			"allTests": [
+				{
+					"409 INVALID_ORDER_STATUS": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 510,
+	"collection": {
+		"requests": [
+			{
+				"id": "f42d6f79-90a7-4db8-a036-5e0386358d32",
+				"method": "GET"
+			},
+			{
+				"id": "2b1765a6-b508-48bf-a7f5-62095d051951",
+				"method": "GET"
+			},
+			{
+				"id": "d73baaa1-9c6b-41e6-bb4d-46ac2770bcd3",
+				"method": "GET"
+			},
+			{
+				"id": "a8e0cdbb-79af-4f79-a5eb-15ca76ca127a",
+				"method": "GET"
+			},
+			{
+				"id": "1f49e57e-f2c5-41dd-85e3-7faeeead51f7",
+				"method": "POST"
+			},
+			{
+				"id": "9b38e185-9cbe-43b3-b787-b86edc03f256",
+				"method": "GET"
+			},
+			{
+				"id": "21fb74be-52bc-4fd3-8c78-6ac7807294df",
+				"method": "POST"
+			},
+			{
+				"id": "65c844fb-f02e-4cff-8f04-ad5e517160f1",
+				"method": "POST"
+			},
+			{
+				"id": "b74b8532-ede7-49c0-b1d7-9bc75434bd81",
+				"method": "POST"
+			}
+		]
+	}
+}
