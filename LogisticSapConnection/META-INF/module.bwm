@@ -12,4 +12,6 @@
   <sca:property xmi:id="_2e3ZUMblEfG1fffaPRda5g" name="db.url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_2mRB0MblEfG1fffaPRda5g" name="db.username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_5jkgcMblEfG1fffaPRda5g" name="db.password" type="property:password" scaext:simpleValue="#!y45SDNje0oJCsMAKdLsf8g==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_a4hXEMejEfGmgsoEXGghrQ" name="ems.url" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_bTlicMejEfGmgsoEXGghrQ" name="ems.username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
 </sca:composite>

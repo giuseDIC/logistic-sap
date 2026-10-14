@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.keypartner.com/logistic-sap/Documents"
+    xmlns:tns="http://www.keypartner.com/logistic-sap/Documents"
+    elementFormDefault="qualified">
+
+    <!-- Risposta di GET /documents -->
+    <xs:element name="DocumentsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="documents" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="documentId" type="xs:string"/>
+                            <xs:element name="status" type="tns:DocumentStatus"/>
+                            <xs:element name="destination" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Tipi -->
+    <xs:simpleType name="DocumentStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DA GESTIRE"/>
+            <xs:enumeration value="GESTITO"/>
+            <xs:enumeration value="CONSEGNATO"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

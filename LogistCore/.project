@@ -3,6 +3,7 @@
 	<name>LogistCore</name>
 	<comment></comment>
 	<projects>
+		<project>LogisticSapConnection</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -47,6 +48,11 @@
 		</buildCommand>
 		<buildCommand>
 			<name>com.tibco.bw.rest.binding.builder.RestBindingBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.tibco.bw.rest.RestSchemaBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>

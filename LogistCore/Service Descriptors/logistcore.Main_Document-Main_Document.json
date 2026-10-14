@@ -1,0 +1,98 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Main_Document",
+    "description" : "Main_Document service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/documents" : {
+      "get" : {
+        "summary" : "getMain_Document",
+        "description" : "getMain_Document",
+        "operationId" : "get-documents",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "carrierId",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a DocumentsResponse to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/DocumentsResponse"
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "documents" : {
+      "type" : "object",
+      "required" : [ "destination", "documentId", "status" ],
+      "properties" : {
+        "documentId" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string",
+          "enum" : [ "DA GESTIRE", "GESTITO", "CONSEGNATO" ]
+        },
+        "destination" : {
+          "type" : "string"
+        }
+      }
+    },
+    "DocumentsResponse" : {
+      "type" : "object",
+      "properties" : {
+        "documents" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/documents",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "ErrorResponse" : {
+      "type" : "object",
+      "required" : [ "code", "message" ],
+      "properties" : {
+        "code" : {
+          "type" : "string",
+          "enum" : [ "CARRIER_ID_REQUIRED", "CARRIER_NOT_FOUND", "INTERNAL_ERROR", "DELIVERY_DATA_REQUIRED", "ORDER_NOT_FOUND", "INVALID_ORDER_STATUS" ]
+        },
+        "message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

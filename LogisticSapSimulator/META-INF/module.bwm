@@ -56,6 +56,7 @@
   <sca:property xmi:id="_mxG5hcZBEfGRdJ1b-lCFdg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_mxG5hsZBEfGRdJ1b-lCFdg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_mxG5h8ZBEfGRdJ1b-lCFdg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_t_Q8cMe5EfG8jtdKe8ndVA" name="http.port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_BgisYMZJEfGRdJ1b-lCFdg" name="ComponentSapDocumentService" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_BgisYcZJEfGRdJ1b-lCFdg" processName="logisticsapsimulator.SapDocumentService"/>
     <sca:service xmi:id="_auYN0MZJEfGRdJ1b-lCFdg" name="SapDocumentService">

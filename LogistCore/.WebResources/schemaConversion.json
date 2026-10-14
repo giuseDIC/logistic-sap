@@ -1,0 +1,22 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/LogistCore/Service Descriptors/logistcore.Main_Document-Main_Document.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.keypartner.com/logistic-sap/Documents"
+    },
+    {
+        "jsonSchemaLocation": "/LogistCore/Service Descriptors/logistcore.Main_Document-Main_Document.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.keypartner.com/logistic-sap/Error"
+    },
+    {
+        "jsonSchemaLocation": "/LogistCore/Service Descriptors/logistcore.Main_Delivery-Main_Delivery.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.keypartner.com/logistic-sap/Delivery"
+    },
+    {
+        "jsonSchemaLocation": "/LogistCore/Service Descriptors/logistcore.Main_Delivery-Main_Delivery.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.keypartner.com/logistic-sap/Error"
+    }
+]}
