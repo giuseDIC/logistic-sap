@@ -4,6 +4,15 @@
     xmlns:tns="http://www.keypartner.com/logistic-sap/Documents"
     elementFormDefault="qualified">
 
+    <!-- Input di Orc_TakeDocuments -->
+    <xs:element name="DocumentsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="carrierId" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <!-- Risposta di GET /documents -->
     <xs:element name="DocumentsResponse">
         <xs:complexType>
